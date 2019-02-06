@@ -1,0 +1,26 @@
+<div class="container text-center">
+  <a routerLink="/new-post" class="btn text-center my-2" [ngStyle]="{'background-color' : colors[sec], 'color' : colorsInverse[sec]}"><i
+      class="fa fa-plus fa-spin"></i> Ajouter un nouvel article <i class="fa fa-plus fa-spin"></i></a>
+  <div class="card-deck">
+    <div *ngFor="let post of posts;  let i = index" class="card text-center" [ngStyle]="{'border-color': colors[i], 'color' : colorsInverse[i]}">
+      <!-- Pour la conversion en fr https://github.com/angular/angular/issues/23826 -->
+      <div class="card-header" [ngStyle]="{'border-color' : colors[i]}">
+        Article créé le {{getDate(post.createdat)}} </div>
+      <img class="card-img-top" src={{post.urlimage}} alt="{{post.titre}}">
+      <div class="card-body">
+        <h5 class="card-title">{{post.title}}</h5>
+        <p class="card-text">{{post.shorttext}}</p>
+        <footer>
+          <small>
+            Ajouté par <cite title="Source Title">{{post.author}}</cite>
+          </small>
+        </footer>
+      </div>
+      <a routerLink="/post/{{post.id}}" class="btn mx-auto my-2" [ngStyle]="{'background-color' : colors[i], 'color' : colorsInverse[i]}">Voir
+        l'article de {{post.title}}</a>
+      <div class="card-footer" [ngStyle]="{'border-color' : colors[i]}">
+        <small>Dernière mise à jour, {{getDifferenceDate(post.updatedat)}}</small>
+      </div>
+    </div>
+  </div>
+</div>
