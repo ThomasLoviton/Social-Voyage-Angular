@@ -6,12 +6,16 @@ import { WallComponent } from './wall/wall.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { NewPostComponent } from './new-post/new-post.component';
+import { EditPostComponent } from './edit-post/edit-post.component';
+import { PostDetailsComponent } from './post-details/post-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WallComponent,
-    NewPostComponent
+    NewPostComponent,
+    EditPostComponent,
+    PostDetailsComponent
   ],
   imports: [
     BrowserModule,

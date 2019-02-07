@@ -1,0 +1,26 @@
+<div class="text-center" [ngStyle]="{'color' : colorsInverse[sec]}">
+  <a (click)="goBack()" class="btn text-center my-2" [ngStyle]="{'background-color' : colors[sec]}"><i class="fa fa-undo fa-spin"></i>
+    Retour <i class="fa fa-undo fa-spin"></i></a>
+  <div *ngIf="post">
+    <div class="card text-center my-2" [ngStyle]="{'border-color': colors[sec], 'color' : colorsInverse[sec]}">
+      <!-- Pour la conversion en fr https://github.com/angular/angular/issues/23826 -->
+      <div class="card-header" [ngStyle]="{'border-color' : colors[sec]}">
+        Article créé le {{getDate(post.createdat)}} </div>
+      <img class="card-img-top" src={{post.urlimage}} alt="{{post.titre}}">
+      <div class="card-body">
+        <h5 class="card-title">{{post.title}}</h5>
+        <p class="card-text">{{post.shorttext}}</p>
+        <footer>
+          <small>
+            Ajouté par <cite title="Source Title">{{post.author}}</cite>
+          </small>
+        </footer>
+      </div>
+      <a routerLink="/post/{{post.id}}/edit" class="btn mx-auto my-2" [ngStyle]="{'background-color' : colors[sec], 'color' : colorsInverse[sec]}">Modifier
+        l'article : {{post.title}}</a>
+      <div class="card-footer" [ngStyle]="{'border-color' : colors[sec]}">
+        <small>Dernière mise à jour, {{getDifferenceDate(post.updatedat)}}</small>
+      </div>
+    </div>
+  </div>
+</div>

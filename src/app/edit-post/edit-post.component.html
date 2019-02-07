@@ -1,0 +1,45 @@
+<div class="text-center" [ngStyle]="{'color' : colorsInverse[sec]}">
+  <a (click)="goBack()" class="btn text-center my-2" [ngStyle]="{'background-color' : colors[sec]}"><i class="fa fa-undo fa-spin"></i>
+    Retour <i class="fa fa-undo fa-spin"></i></a>
+  <div *ngIf="post">
+    <div class="mx-auto card text-center" [ngStyle]="{'border-color' : colors[sec]}">
+      <div class="card-header" [ngStyle]="{'border-color' : colors[sec]}">
+        Ajouter un nouvel article
+      </div>
+      <form class="mx-auto">
+        <input type="hidden" value="{{post.id}}" #PostId>
+        <div class="form-group">
+          <label>Titre de l'article</label>
+          <input type="text" class="form-control" [ngStyle]="{'border-color' : colors[sec], 'color' : colorsInverse[sec]}"
+            placeholder="Titre de l'article" value="{{post.title}}" #PostTitle>
+        </div>
+        <div class="form-group">
+          <label>Mini texte de l'article</label>
+          <textarea type="text" class="form-control" [ngStyle]="{'border-color' : colors[sec], 'color' : colorsInverse[sec]}"
+            placeholder="Mini texte de l'article" value="{{post.shorttext}}" rows="2" #PostShortText></textarea>
+        </div>
+        <div class="form-group">
+          <label>Texte de l'article</label>
+          <textarea type="text" class="form-control" [ngStyle]="{'border-color' : colors[sec], 'color' : colorsInverse[sec]}"
+            placeholder="Texte de l'article" value="{{post.text}}" rows="5" #PostText></textarea>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label>Auteur de l'article</label>
+            <input type="text" class="form-control" [ngStyle]="{'border-color' : colors[sec], 'color' : colorsInverse[sec]}"
+              placeholder="Auteur de l'article" value="{{post.author}}" #PostAuthor>
+          </div>
+          <div class="form-group col-md-6">
+            <label>Url de l'image de l'article</label>
+            <input type="text" class="form-control" [ngStyle]="{'border-color' : colors[sec], 'color' : colorsInverse[sec]}"
+              placeholder="Url de l'image de l'article" value="{{post.urlimage}}" #PostUrlImage>
+          </div>
+        </div>
+        <a class="btn text-center my-2" [ngStyle]="{'background-color' : colors[sec]}" (click)="editPost(PostId.value, PostTitle.value, PostShortText.value, PostText.value, PostAuthor.value, PostUrlImage.value); 
+            PostTitle.value=''; PostShortText.value=''; PostText.value=''; PostAuthor.value=''; PostUrlImage.value=''; goBack();">
+          Modifier
+        </a>
+      </form>
+    </div>
+  </div>
+</div>

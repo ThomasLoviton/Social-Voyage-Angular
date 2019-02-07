@@ -1,4 +1,4 @@
-<div class="container text-center" [ngStyle]="{'color' : colorsInverse[sec]}">
+<div class="text-center" [ngStyle]="{'color' : colorsInverse[sec]}">
   <a (click)="goBack()" class="btn text-center my-2" [ngStyle]="{'background-color' : colors[sec]}"><i class="fa fa-undo fa-spin"></i>
     Retour <i class="fa fa-undo fa-spin"></i></a>
   <div class="mx-auto card text-center" [ngStyle]="{'border-color' : colors[sec]}">
@@ -25,16 +25,16 @@
         <div class="form-group col-md-6">
           <label>Auteur de l'article</label>
           <input type="text" class="form-control" [ngStyle]="{'border-color' : colors[sec], 'color' : colorsInverse[sec]}"
-            placeholder="Auteur de l'article" #ArticleAuthor>
+            placeholder="Auteur de l'article" #PostAuthor>
         </div>
         <div class="form-group col-md-6">
           <label>Url de l'image de l'article</label>
           <input type="text" class="form-control" [ngStyle]="{'border-color' : colors[sec], 'color' : colorsInverse[sec]}"
-            placeholder="Url de l'image de l'article" #ArticleUrlImage>
+            placeholder="Url de l'image de l'article" #PostUrlImage>
         </div>
       </div>
-      <a class="btn text-center my-2" [ngStyle]="{'background-color' : colors[sec]}" (click)="add(PostTitle.value, PostShortText.value, PostText.value, ArticleAuthor.value, ArticleUrlImage.value); 
-      PostTitle.value=''; PostShortText.value=''; PostText.value=''; ArticleAuthor.value=''; ArticleUrlImage.value=''; goBack();">
+      <a class="btn text-center my-2" [ngStyle]="{'background-color' : colors[sec]}" (click)="addPost(PostTitle.value, PostShortText.value, PostText.value, PostAuthor.value, PostUrlImage.value); 
+      PostTitle.value=''; PostShortText.value=''; PostText.value=''; PostAuthor.value=''; PostUrlImage.value=''; goBack();">
         Ajouter
     </a>
     </form>
