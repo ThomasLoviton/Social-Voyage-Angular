@@ -35,6 +35,13 @@ export class PostDetailsComponent implements OnInit {
     );
   }
 
+  deletePost() {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.postService.deletePost(id).subscribe(
+      data => this.post = data
+    );
+  }
+
   getDate(articleDate : string) : string{
     let date = moment(articleDate).format('dddd DD MMMM YYYY [à] HH[h]mm').toString();
     return date;

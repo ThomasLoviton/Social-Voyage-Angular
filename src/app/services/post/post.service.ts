@@ -30,4 +30,8 @@ export class PostService {
     
     return this.http.post(this.apiUrl + '/' + id + '/edit', body, this.httpOptions);
   }
+
+  deletePost(id) {
+    return this.http.delete(this.apiUrl + '/' + id + '/delete');
+  }
 }

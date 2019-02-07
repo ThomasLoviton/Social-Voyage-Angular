@@ -18,6 +18,8 @@
       </div>
       <a routerLink="/post/{{post.id}}/edit" class="btn mx-auto my-2" [ngStyle]="{'background-color' : colors[sec], 'color' : colorsInverse[sec]}">Modifier
         l'article : {{post.title}}</a>
+      <a (click)="deletePost();goBack()" class="btn mx-auto my-2" [ngStyle]="{'background-color' : colors[sec], 'color' : colorsInverse[sec]}">Supprimer
+        l'article : {{post.title}}</a>
       <div class="card-footer" [ngStyle]="{'border-color' : colors[sec]}">
         <small>Dernière mise à jour, {{getDifferenceDate(post.updatedat)}}</small>
       </div>
