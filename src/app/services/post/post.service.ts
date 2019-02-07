@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 export class PostService {
 
   private httpOptions = {headers: { 'Content-Type': 'application/x-www-form-urlencoded' }};
-  private apiUrl = 'http://localhost/social-voyage-symfony/public/post/';
+  private apiUrl = 'http://localhost/social-voyage-symfony/public/post';
 
   constructor(private http: HttpClient) { }
 
@@ -18,16 +18,16 @@ export class PostService {
   addPost(post) {
     let body = `title=${post.title}&shorttext=${post.shorttext}&text=${post.text}&author=${post.author}&urlimage=${post.urlimage}`;
     
-    return this.http.post(this.apiUrl + 'new', body, this.httpOptions);
+    return this.http.post(this.apiUrl + '/new', body, this.httpOptions);
   }
 
   getPost(id) {
-    return this.http.get(this.apiUrl + id + '/show');
+    return this.http.get(this.apiUrl + '/' + id + '/show');
   }
 
   editPost(id, post) {
     let body = `title=${post.title}&shorttext=${post.shorttext}&text=${post.text}&author=${post.author}&urlimage=${post.urlimage}`;
     
-    return this.http.post(this.apiUrl + id + '/edit', body, this.httpOptions);
+    return this.http.post(this.apiUrl + '/' + id + '/edit', body, this.httpOptions);
   }
 }
