@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NewPostComponent } from './new-post/new-post.component';
 import { EditPostComponent } from './edit-post/edit-post.component';
 import { PostDetailsComponent } from './post-details/post-details.component';
+import { CommentsComponent } from './comments/comments.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { PostDetailsComponent } from './post-details/post-details.component';
     WallComponent,
     NewPostComponent,
     EditPostComponent,
-    PostDetailsComponent
+    PostDetailsComponent,
+    CommentsComponent
   ],
   imports: [
     BrowserModule,
