@@ -1,3 +1,18 @@
-<ul>
-  <li *ngFor="let comment of comments">{{comment.text}} / {{comment.author}}</li>
-</ul>
+<div class="card text-center my-2" [ngStyle]="{'color' : colorsInverse[sec], 'border-color': colors[sec]}">
+  <div class="card-header" [ngStyle]="{'border-color': colors[sec]}">
+    Les commentaires
+  </div>
+  <div class="row justify-content-center" *ngFor="let comment of comments">
+    <div class="col-6 mb-2" [ngStyle]="{'border-bottom': '1px solid', 'border-color': colors[sec]}">
+      <small>
+        Le <cite title="Source Title">{{comment.postedat | date:'dd/MM/yyyy à HH:mm'}}</cite>
+      </small>
+      <h5>{{comment.author}}</h5>
+      <p>{{comment.text}}</p>
+    </div>
+  </div>
+  <div class="card-footer" [ngStyle]="{'border-color': colors[sec]}">
+    <a routerLink="" class="btn" [ngStyle]="{'background-color' : colors[sec], 'color' : colorsInverse[sec]}">Ajouter un
+      commentaire</a>
+  </div>
+</div>

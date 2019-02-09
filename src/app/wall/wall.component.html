@@ -1,9 +1,9 @@
 <div class="container-fluid text-center">
-  <a routerLink="/new-post" class="btn text-center my-2" [ngStyle]="{'background-color' : colors[sec], 'color' : colorsInverse[sec]}"><i
+  <a routerLink="/new-post" class="btn my-2" [ngStyle]="{'background-color' : colors[sec], 'color' : colorsInverse[sec]}"><i
       class="fa fa-plus fa-spin"></i> Ajouter un nouvel article <i class="fa fa-plus fa-spin"></i></a>
   <div class="row">
     <div *ngFor="let post of posts;  let i = index" class="col-12 col-sm-6 col-lg-3">
-      <div class="card text-center my-2" [ngStyle]="{'border-color': colors[i], 'color' : colorsInverse[i]}">
+      <div class="card my-2" [ngStyle]="{'border-color': colors[i]}">
         <!-- Pour la conversion en fr https://github.com/angular/angular/issues/23826 -->
         <div class="card-header" [ngStyle]="{'border-color' : colors[i]}">
           Article créé le {{getDate(post.createdat)}} </div>

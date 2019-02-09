@@ -2,7 +2,7 @@
   <a (click)="goBack()" class="btn text-center my-2" [ngStyle]="{'background-color' : colors[sec]}"><i class="fa fa-undo fa-spin"></i>
     Retour <i class="fa fa-undo fa-spin"></i></a>
   <div *ngIf="post">
-    <div class="card text-center my-2" [ngStyle]="{'border-color': colors[sec], 'color' : colorsInverse[sec]}">
+    <div class="card my-2" [ngStyle]="{'border-color': colors[sec]}">
       <!-- Pour la conversion en fr https://github.com/angular/angular/issues/23826 -->
       <div class="card-header" [ngStyle]="{'border-color' : colors[sec]}">
         Article créé le {{getDate(post.createdat)}} </div>
@@ -18,7 +18,7 @@
       </div>
       <a routerLink="/post/{{post.id}}/edit" class="btn mx-auto my-2" [ngStyle]="{'background-color' : colors[sec], 'color' : colorsInverse[sec]}">Modifier
         l'article : {{post.title}}</a>
-      <a (click)="deletePost();goBack()" class="btn mx-auto my-2" [ngStyle]="{'background-color' : colors[sec], 'color' : colorsInverse[sec]}">Supprimer
+      <a (click)="deletePost();goBack()" class="btn mx-auto mb-2" [ngStyle]="{'background-color' : colors[sec], 'color' : colorsInverse[sec]}">Supprimer
         l'article : {{post.title}}</a>
       <div class="card-footer" [ngStyle]="{'border-color' : colors[sec]}">
         <small>Dernière mise à jour, {{getDifferenceDate(post.updatedat)}}</small>
