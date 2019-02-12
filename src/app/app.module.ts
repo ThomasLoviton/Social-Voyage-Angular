@@ -9,6 +9,7 @@ import { NewPostComponent } from './new-post/new-post.component';
 import { EditPostComponent } from './edit-post/edit-post.component';
 import { PostDetailsComponent } from './post-details/post-details.component';
 import { CommentsComponent } from './comments/comments.component';
+import { NewCommentComponent } from './new-comment/new-comment.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { CommentsComponent } from './comments/comments.component';
     NewPostComponent,
     EditPostComponent,
     PostDetailsComponent,
-    CommentsComponent
+    CommentsComponent,
+    NewCommentComponent
   ],
   imports: [
     BrowserModule,

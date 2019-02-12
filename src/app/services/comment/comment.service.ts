@@ -14,4 +14,14 @@ export class CommentService {
   getCommentsByPost(idpost) {
     return this.http.get(this.apiUrl + '/' + idpost + '/comment');
   }
+
+  addComment(idpost, comment) {
+    let body = `text=${comment.text}&author=${comment.author}`;
+    
+    return this.http.post(this.apiUrl + '/' + idpost + '/comment/new', body, this.httpOptions);
+  }
+
+  deleteComment(idpost, idcomment) {
+    return this.http.delete(this.apiUrl + '/' + idpost + '/comment/' + idcomment + '/delete');
+  }
 }
