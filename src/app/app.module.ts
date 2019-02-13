@@ -10,6 +10,7 @@ import { EditPostComponent } from './edit-post/edit-post.component';
 import { PostDetailsComponent } from './post-details/post-details.component';
 import { CommentsComponent } from './comments/comments.component';
 import { NewCommentComponent } from './new-comment/new-comment.component';
+import { EditCommentComponent } from './edit-comment/edit-comment.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { NewCommentComponent } from './new-comment/new-comment.component';
     EditPostComponent,
     PostDetailsComponent,
     CommentsComponent,
-    NewCommentComponent
+    NewCommentComponent,
+    EditCommentComponent
   ],
   imports: [
     BrowserModule,

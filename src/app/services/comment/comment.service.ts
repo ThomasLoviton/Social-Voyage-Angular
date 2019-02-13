@@ -15,6 +15,10 @@ export class CommentService {
     return this.http.get(this.apiUrl + '/' + idpost + '/comment');
   }
 
+  getComment(idpost, idcomment) {
+    return this.http.get(this.apiUrl + '/' + idpost + '/comment/' + idcomment + '/show');
+  }
+
   addComment(idpost, comment) {
     let body = `text=${comment.text}&author=${comment.author}`;
     
@@ -23,5 +27,11 @@ export class CommentService {
 
   deleteComment(idpost, idcomment) {
     return this.http.delete(this.apiUrl + '/' + idpost + '/comment/' + idcomment + '/delete');
+  }
+
+  editComment(idpost, idcomment, comment) {
+    let body = `text=${comment.text}&author=${comment.author}`;
+    
+    return this.http.post(this.apiUrl + '/' + idpost + '/comment/' + idcomment + '/edit', body, this.httpOptions);
   }
 }
