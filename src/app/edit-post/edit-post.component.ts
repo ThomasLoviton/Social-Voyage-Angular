@@ -47,6 +47,7 @@ export class EditPostComponent implements OnInit {
     }
     this.postService.editPost(id, {title, shorttext, text, author, urlimage})
       .subscribe(data => this.post = data);
+      
+      return this.getPost();
   }
-
 }

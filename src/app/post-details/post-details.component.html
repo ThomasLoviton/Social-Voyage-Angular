@@ -6,10 +6,10 @@
       <!-- Pour la conversion en fr https://github.com/angular/angular/issues/23826 -->
       <div class="card-header" [ngStyle]="{'border-color' : colors[sec]}">
         Article créé le {{getDate(post.createdat)}} </div>
-      <img class="card-img-top" src={{post.urlimage}} alt="{{post.titre}}">
+      <img class="card-img-top p-2" src={{post.urlimage}} alt="{{post.titre}}">
       <div class="card-body">
         <h5 class="card-title">{{post.title}}</h5>
-        <p class="card-text">{{post.shorttext}}</p>
+        <p class="card-text">{{post.text}}</p>
         <footer>
           <small>
             Ajouté par <cite title="Source Title">{{post.author}}</cite>
